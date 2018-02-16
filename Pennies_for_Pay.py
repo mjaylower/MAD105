@@ -9,9 +9,9 @@ print('-------------------------------------------')
 
 # create a range loop with user input
 for days in range(1, (days_worked + 1)):
-    print(format(days, '7.0f'), '\t', '|', '\t\t', '$', pay)
+    print(format(days, '7.0f'), '\t', '|', '\t\t', '$', format(pay, ',.2f'))
     total += pay
     pay = pay * 2
 
 # display total monies made
-print('The total amount earned is: $', format(total, '.2f'))
+print('The total amount earned is: $', format(total, ',.2f'))
