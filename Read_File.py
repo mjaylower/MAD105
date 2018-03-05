@@ -1,6 +1,6 @@
 def main():
     count = 0  # set the count variable to 0 to begin checking the number of lines in the file
-    input_file = open('names.txt.', 'r')  # call the file to be read by the program
+    input_file = open('names.txt', 'r')  # call the file to be read by the program
 
     name = input_file.readline()  # allow the file to be read
     name = name.rstrip('\n')  # remove the newline tag so name appear sequentially
