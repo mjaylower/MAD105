@@ -1,0 +1,36 @@
+def main():
+
+    user_string = user_input()
+    user_string = user_string.lower()
+    user_string = user_string.replace(' ', '')
+    user_string = user_string.replace('.', '')
+    user_string = user_string.replace("'", "")
+    user_string = user_string.replace(',', '')
+
+    print(user_string)
+    length = len(user_string)
+    popular_char = ''
+    highest_count = 0
+
+    for i in range(0, len(user_string)):
+        count = 0
+        j = 0
+        letter = user_string[i]
+        while length > 0:
+            if letter == user_string[j]:
+                count += 1
+            j += 1
+            length -= 1
+            if highest_count <= count:
+                highest_count = count
+                popular_char = letter
+
+    print(popular_char)
+
+
+def user_input():
+    user_input_string = input('Please enter your favorite phrase. ')
+    return user_input_string
+
+
+main()
