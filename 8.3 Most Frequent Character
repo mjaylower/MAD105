@@ -1,37 +1,37 @@
 def main():
 
-    user_string = user_input()
-    user_string = user_string.upper()
-    user_string = user_string.strip()
-    user_string = user_string.replace(' ', '')
-    user_string = user_string.replace('.', '')
-    user_string = user_string.replace("'", "")
-    user_string = user_string.replace(',', '')
-    user_string = sorted(user_string)
+    user_string = user_input()  # run user_input function and bring string into main function
+    user_string = user_string.upper()  # turn all alpha character to uppercase
+    user_string = user_string.strip()  # strip all whitespace, spaces, newline, tabs
+    user_string = user_string.replace(' ', '')  # replace all spaces with no space
+    user_string = user_string.replace('.', '')  # replace all . with no space
+    user_string = user_string.replace("'", "")  # replace all ' with no space
+    user_string = user_string.replace(',', '')  #replace all , with no space
+    user_string = sorted(user_string)  # sort alpha character from A to Z
 
-#    print(user_string)
-    popular_character = ''
-    popular_character_count = 0
+    popular_character = ''  # set a variable for the most frequent letter to be placed after program runs
+    popular_character_count = 0  # set the variable for the amount of times the most frequent letter appears
 
-    for ch in user_string:
-        current_character_count = 0
-        for c in user_string:
-            current_character_count += ch == c
-        if current_character_count >= popular_character_count:
-            if current_character_count == popular_character_count:
-                if ch in popular_character:
-                    continue
-                popular_character = popular_character + ' and ' + ch
-            else:
-                popular_character = ch
-            popular_character_count = current_character_count
-    print('The most frequent character(s): ' + popular_character)
-    print('The character(s) appeared', popular_character_count, 'times')
-
-
-def user_input():
-    user_input_string = input('Please enter your favorite phrase. ')
-    return user_input_string
+    for ch in user_string:  # start the loop for each character in the string
+        current_character_count = 0  # set a local counter which will be transferred to pop_char_count after program runs
+        for c in user_string:  # start loop for each character in string now that counter is set
+            current_character_count += ch == c  # ccc equals the char in the string
+        if current_character_count >= popular_character_count:  # if the number of character is greater than overall count
+            if current_character_count == popular_character_count:  # if number of character is equal to overall count
+                if ch in popular_character:  # if the count is equal, both values will be used
+                    continue  # continue if there is equal count
+                popular_character = popular_character + ' and ' + ch  # if equal popular_char will concatenate both chars
+            else:  # if there is only one character that is most frequent
+                popular_character = ch  # that character is transferred to overall pop_char
+            popular_character_count = current_character_count  # regardless of which character(s) the count is transferred to pop_char_count
+    print('The most frequent character(s): ' + popular_character)  # prints which char(s) is most frequent
+    print('The character(s) appeared', popular_character_count, 'times')  # prints the number of times char appears
 
 
+def user_input():  # function to get user input 
+    user_input_string = input('Please enter your favorite phrase. ')  # ask users for string
+    return user_input_string  # returns string value back to main function
+
+
+# runs program
 main()
