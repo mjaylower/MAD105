@@ -1,3 +1,7 @@
+# create the parent class for overall office furniture
+# create the values used to define the object and set variables
+
+
 class OfficeFurniture(object):
     def __init__(self, category, material, length, width, price):
         self.__category = category
@@ -36,8 +40,10 @@ class OfficeFurniture(object):
     def get_price(self):
         return self.__price
 
+# establish a string that will print with the values given for each variable
+# create strings where int are used and format price for currency
+
     def __str__(self):
         line_item = "The " + self.__category + " is made of " + self.__material + " and is " + str(self.__length) + " by " \
                     + str(self.__width) + " and cost ${:0,.2f}" .format(self.__price)
         return line_item
-
