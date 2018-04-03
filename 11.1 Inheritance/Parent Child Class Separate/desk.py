@@ -1,3 +1,8 @@
+# create the subclass/child class passing arguments from the OfficeFurniture class
+# reestablish the init with the previously passed values as well as the class specific values
+# define and create variable for local class, since parent values are hidden and will require the 'get'
+# import the officefurniture module
+
 import officefurniture
 
 
@@ -21,6 +26,8 @@ class Desk(officefurniture.OfficeFurniture):
 
     def get_number_drawers(self):
         return self.__number_drawers
+
+# create string that will display when child class is called upon
 
     def __str__(self):
         print_line = "The " + self.get_category() + " is made of " + self.get_material() + " and is " + \
