@@ -1,7 +1,7 @@
 # define the main function
 def main():
     n = int(input('Pick a number: '))  # allow user to enter a number to count up to
-    counting(n)  # call the coutinging function
+    counting(n)  # call the counting function
 
 
 # define the counting function
