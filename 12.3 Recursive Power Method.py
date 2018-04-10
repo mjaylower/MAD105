@@ -2,11 +2,11 @@
 def main():
     int1 = int(input('Please enter a positive number: '))  # ask user for first positive int
     int2 = int(input('Please enter another positive number: '))  # ask user for second positive int
-    print('I will run my calculations now...')
+    print('\nI will run my calculations now...\n')
 
     power = power_method(int1, int2)  # establish local variable that power_method will return value to
 
-    print(int1, 'raised by the power of', int2, 'is', power)  # print the solution to the power of problem
+    print(int1, 'raised by the power of', int2, 'is {:,}'.format(power))  # print the solution to the power of problem
 
 
 # define the power_method function
